@@ -1,0 +1,13 @@
+server:
+  port: 8888
+
+spring:
+  application:
+    name: Gateway
+  cloud:
+    discovery:
+      enabled: true
+
+eureka:
+  instance:
+    hostname: localhost
