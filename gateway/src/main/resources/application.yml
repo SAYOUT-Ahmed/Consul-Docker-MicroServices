@@ -5,9 +5,10 @@ spring:
   application:
     name: Gateway
   cloud:
-    discovery:
+    consul:
       enabled: true
-
-eureka:
-  instance:
-    hostname: localhost
+      host: localhost # Consul host
+      port: 8500 # Consul port
+      discovery:
+        prefer-ip-address: true # Optional, uses IP address for service instances
+        instance-id: ${spring.application.name}:${vcap.application.instance_id:${spring.application.instance_id:${random.value}}}
